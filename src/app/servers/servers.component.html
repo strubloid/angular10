@@ -1,5 +1,29 @@
-<div>
-  <h2>Server list</h2>
-</div>
-<p><app-server></app-server></p>
-<p><app-server></app-server></p>
+<label>{{ componentName }}</label>
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName"
+/>
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>Add Server</button>
+<!--<p [innerText]="allowNewServer"></p>-->
+<p>{{ serverCreationStatus }}</p>
+<!--<p><app-server></app-server></p>-->
+<!--<p><app-server></app-server></p>-->
+
+<hr>
+<input
+  type="text"
+  [(ngModel)]="username"
+/>
+<button
+  class="btn btn-warning ml-2"
+  [disabled]="username === '' ? true : false"
+  (click)="restartUsername()"
+>Restart</button>
+<p class="card" [hidden]="usernameValidation()">{{ username }}</p>
+
+<hr>

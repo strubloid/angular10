@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
 })
 export class ServerComponent {
 
+  serverId = 10;
+  serverStatus = 'offline';
+
+  // This is how to create an arrow property of this component
+  getServerStatus = () => {
+    return this.serverStatus;
+  }
 
 }
